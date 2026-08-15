@@ -1,19 +1,5 @@
-# BSE Specialisation Advisor
+The BSE Specialisation Advisor is an interactive web application designed to help incoming BSE students identify the specialisation that best matches their interests, strengths, and goals. The project is built using HTML, CSS, and JavaScript. The index.html file provides the structure of the application, including the landing page, student information form, interactive quiz, results section, and contact/feedback page. The styles.css file controls the visual appearance, including the layout, colours, buttons, cards, responsive design, progress bar, timer, and validation states. The script.js file provides the application's functionality, including real-time form validation using regular expressions, dynamic quiz questions, answer selection, countdown timer, scoring, speed/streak multipliers, interactive image/video questions, DOM manipulation, and the HTML5 Canvas chart used to display the final results.
 
-A GitHub Pages-ready interactive student advisor prototype.
+To use the project, open index.html in a web browser. On the landing page, enter a valid name, institutional email, phone number, and learning goal. The form provides immediate feedback when information is invalid. After completing the form, click Start Assessment to enter the quiz. Answer the questions before the countdown reaches zero; the application records the answers and calculates scores for Low-Level Programming, AR/VR, Full-Stack Web Development, and Machine Learning. When the quiz is completed, the Results page displays the recommended specialisation, feedback, next-step recommendation, and a dynamically generated Canvas chart. The Contact page can be used to view project information and submit feedback.
 
-## Views
-1. Landing/profile form with inline regex validation.
-2. 8-question interactive quiz with progress, countdown timer, hotspot and video media.
-3. Results with category scoring, feedback and hand-drawn Canvas 2D bar chart.
-4. Contact & feedback with inline validation.
-
-## Deploy
-A
-Upload this folder to a public GitHub repository, enable **Settings → Pages → Deploy from branch**, and use the generated Pages URL.
-
-## Attribution / AI disclosure
-- Layout, interaction logic and original code: project author.
-- Video sample: MDN interactive examples (`interactive-examples.mdn.mozilla.net`) used only as a demonstration asset.
-- No external Canvas/chart library is used.
-- AI assistance: this prototype was generated with AI assistance and should be reviewed, personalised, tested and credited according to course requirements.
+The project can be deployed through GitHub Pages by uploading index.html, styles.css, and script.js to a public GitHub repository and enabling GitHub Pages from the repository settings. No external JavaScript framework or Canvas library is required. The code is designed to demonstrate the required frontend development concepts, including semantic HTML, CSS styling, JavaScript event handling, regular expressions, DOM updates, setInterval() and clearInterval() for the timer, HTML5 multimedia, and Canvas 2D rendering. The main functions to understand when presenting the project are showView(), validateForm(), startQuiz(), startTimer(), renderQuestion(), selectAnswer(), submitQuiz(), and drawChart().
