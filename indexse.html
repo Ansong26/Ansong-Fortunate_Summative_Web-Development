@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Discover the BSE specialisation that best matches how you think, build and solve problems.">
+<title>BSE Specialisation Advisor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<header>
+  <div class="nav">
+    <div class="brand">BSE Advisor</div>
+    <div class="nav-actions">
+      <button data-nav="landing" class="active" onclick="showView('landing')">Start</button>
+      <button data-nav="quiz" onclick="showView('quiz')">Quiz</button>
+      <button data-nav="results" onclick="showView('results')">Results</button>
+      <button data-nav="contact" onclick="showView('contact')">Contact</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="landing" class="view active">
+  <div class="hero">
+    <span class="kicker">Incoming Student Reflection Tool</span>
+    <h1>BSE Specialisation Advisor</h1>
+    <p class="muted">Discover the BSE specialisation that best matches how you think, build and solve problems.</p>
+    <div class="notice"><strong>How it works:</strong> complete your profile, answer 8 questions, and receive a personalised starting point. There are no “wrong” identities—this is a reflection tool.</div>
+    <form id="profileForm" novalidate>
+      <div class="grid">
+        <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name"><span class="error-message"></span></div>
+        <div class="field"><label for="email">Institutional email</label><input id="email" name="email" type="email" placeholder="student.id@bse.ac.mu"><span class="error-message"></span></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" placeholder="+230 51234567"><span class="error-message"></span></div>
+        <div class="field"><label for="goal">One goal for your first semester</label><textarea id="goal" name="goal" rows="3"></textarea><span class="error-message"></span></div>
+      </div>
+      <div class="actions"><button class="btn" type="button" onclick="startQuiz()">Start assessment</button><button class="btn secondary" type="reset">Clear</button></div>
+    </form>
+  </div>
+</section>
+
+<section id="quiz" class="view">
+  <div class="quiz-top"><div><strong id="qNumber">Question 1 of 8</strong><div class="progress"><span id="progressBar"></span></div></div><div class="timer">Time <span id="timer">02:00</span></div></div>
+  <div id="timeoutWarning" class="notice" hidden><strong>Time expired.</strong> Your current answers will be submitted.</div>
+  <article class="card">
+    <span class="kicker">Interactive question</span>
+    <h2 id="questionText"></h2>
+    <div id="media"></div>
+    <div id="options"></div>
+    <div class="actions"><button id="nextBtn" class="btn" onclick="nextQuestion()" disabled>Next</button></div>
+  </article>
+</section>
+
+<section id="results" class="view">
+  <div class="grid">
+    <article class="card result-card"><span class="kicker">Your strongest match</span><div id="resultScore" class="result-score">0</div><h2 id="resultTitle">Complete the quiz</h2><p id="resultFeedback"></p><p><strong>Next step:</strong> <span id="recommendation"></span></p><p id="timeoutResult" class="muted"></p></article>
+    <article class="card"><h2>Profile graph</h2><canvas id="resultChart" width="760" height="360" aria-label="Canvas profile bar chart"></canvas></article>
+  </div>
+  <div class="actions"><button class="btn" onclick="showView('quiz')">Review quiz</button><button class="btn secondary" onclick="showView('landing')">Start again</button></div>
+</section>
+
+<section id="contact" class="view">
+  <div class="grid">
+    <article class="card"><span class="kicker">Author / project</span><h2>Built for incoming students</h2><p>This prototype demonstrates semantic HTML, responsive CSS, JavaScript state management, regex validation, DOM updates, a custom timer and Canvas 2D rendering.</p><p><strong>Author:</strong> Your Name</p><p><strong>GitHub:</strong> <a href="https://github.com/" target="_blank" rel="noopener">Project repository</a></p><p><strong>Live site:</strong> GitHub Pages deployment link goes here.</p></article>
+    <form class="card" onsubmit="submitContact(event)" novalidate>
+      <h2>Contact & feedback</h2>
+      <div class="field"><label for="contactName">Name</label><input id="contactName" name="contactName"><span class="error-message"></span></div>
+      <div class="field"><label for="contactEmail">Email</label><input id="contactEmail" name="contactEmail" type="email"><span class="error-message"></span></div>
+      <div class="field"><label for="message">Message</label><textarea id="message" name="message" rows="5"></textarea><span class="error-message"></span></div>
+      <button class="btn" type="submit">Send feedback</button>
+      <p id="contactSuccess" class="notice" hidden>Thanks! Your feedback has been validated locally.</p>
+    </form>
+  </div>
+</section>
+</main>
+<div class="footer">Prototype • Replace author/repository details before submission.</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

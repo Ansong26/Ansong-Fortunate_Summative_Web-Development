@@ -1,0 +1,62 @@
+
+/* ---------- Global layout and visual system ---------- */
+:root{
+  --ink:#172033; --muted:#657089; --paper:#ffffff; --bg:#f4f7fb;
+  --brand:#5b4bdb; --brand2:#19a974; --danger:#d83a56; --success:#198754;
+  --border:#dce2ee; --shadow:0 18px 45px rgba(23,32,51,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+a{color:var(--brand)}
+.app-shell{min-height:100vh}
+header{background:linear-gradient(135deg,var(--brand),#2d8cff);color:#fff;padding:18px 6vw;position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:.3px}
+.nav-actions{display:flex;gap:8px;flex-wrap:wrap}
+.nav button{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35);padding:8px 12px;border-radius:10px}
+.nav button.active,.nav button:hover{background:#fff;color:var(--brand)}
+main{max-width:1100px;margin:0 auto;padding:42px 22px}
+.view{display:none;animation:fade .25s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero,.card{background:var(--paper);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow)}
+.hero{padding:38px}
+h1{font-size:clamp(2rem,5vw,3.6rem);line-height:1.05;margin:8px 0 14px}
+h2{margin-top:0}
+.kicker{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;font-weight:800;color:var(--brand)}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{padding:24px}
+.field{margin:16px 0}
+label{display:block;font-weight:700;margin-bottom:7px}
+input,textarea,select{width:100%;padding:12px 13px;border:2px solid var(--border);border-radius:11px;background:#fff;outline:none}
+input:focus,textarea:focus{border-color:var(--brand)}
+.is-valid{border-color:var(--success)!important}
+.is-invalid{border-color:var(--danger)!important}
+.error-message{display:block;color:var(--danger);font-size:.84rem;min-height:20px;margin-top:4px}
+.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:800;background:var(--brand);color:#fff}
+.btn.secondary{background:#edf0f7;color:var(--ink)}
+.btn.success{background:var(--success)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.notice{padding:12px 14px;border-radius:12px;background:#eef7ff;border:1px solid #cde7ff}
+.quiz-top{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.progress{height:10px;background:#e8ecf5;border-radius:999px;overflow:hidden}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--brand),#2d8cff);transition:width .2s}
+.timer{font-weight:900;font-variant-numeric:tabular-nums;color:var(--brand)}
+.option{display:block;width:100%;text-align:left;border:2px solid var(--border);background:#fff;padding:14px;border-radius:13px;margin:10px 0}
+.option.selected{border-color:var(--brand);background:#f2f0ff}
+.option input{width:auto;margin-right:8px}
+.media-box{border-radius:18px;background:#111a2c;color:#fff;padding:20px;margin:18px 0}
+.hotspot{position:relative;max-width:720px;margin:auto;border-radius:18px;overflow:hidden;background:#e9eef8;aspect-ratio:16/8}
+.hotspot .zone{position:absolute;border:3px dashed rgba(255,255,255,.9);background:rgba(91,75,219,.18);border-radius:14px;color:#172033;font-weight:800}
+.hotspot .z1{left:5%;top:12%;width:20%;height:32%}.hotspot .z2{left:28%;top:12%;width:20%;height:32%}
+.hotspot .z3{left:51%;top:12%;width:20%;height:32%}.hotspot .z4{left:28%;top:52%;width:43%;height:32%}
+.result-score{font-size:3rem;font-weight:900;color:var(--brand)}
+.result-card{border-left:7px solid var(--brand)}
+canvas{width:100%;max-width:760px;height:360px;border:1px solid var(--border);border-radius:18px;background:#fff}
+.footer{text-align:center;color:var(--muted);padding:30px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{padding:25px}main{padding:24px 14px}.nav{align-items:flex-start;flex-direction:column}}
+
